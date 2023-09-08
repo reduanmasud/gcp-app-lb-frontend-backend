@@ -81,5 +81,46 @@ sudo nginx -s reload
 ```
 
 ## 4th: Create an EC2 instance for the front end.
+Configuration
+```
+Name: loadbalancer
+Region: us-central1 (lowa) <-- because we've created our vps & subnet on us-central1
+Zone: us-central1-a
+Allow Firewall HTTP & HTTPS traffic
+Then go to the Advanced option & set our subnet "project-subnet"
+External IPv4 address: None
+```
+Turn on the SSH terminal and do the following
+Update & install some necessery apps;
+```sh
+sudo apt update -y
+sudo apt install -y git ca-certificates curl gnupg
+```
+Download & Install nodejs GPG key
+```sh
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+```
+Create dev repo
+```sh
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+```
+Install nodejs now
+```sh
+sudo apt-get update
+sudo apt-get install nodejs -y
+```
+To make yarn work, use 
+```sh
+sudo corepack enable
+```
+Now clone this git repo then use these commands
+```sh
+cd frontend
+yarn
+yarn run build
+yarn run preview --host --port 80
+```
 ## 5th: Create an EC2 instance for Backend
 
