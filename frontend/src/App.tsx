@@ -7,7 +7,7 @@ const port = "3000";
 function App() {
 
 
-  const [cities, setCities] = useState([]);  
+  const [cities, setCities] = useState<any[]>([]);  
   const fetchList = () => {
     fetch(`${host}:${port}/cities`)
     .then(res => {
