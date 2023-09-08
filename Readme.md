@@ -62,13 +62,22 @@ http {
     }
   }
   upstream frontend {
-     server your-server-ip;
+     server your-frontend-ip;
   }
   upstream backend {
     server your-backend-id;
   }
 
 }
+```
+
+To check, if formate is ok run this command.
+```sh
+sudo nginx -t
+```
+To restart the server, use this command
+```sh
+sudo nginx -s reload
 ```
 
 ## 4th: Create an EC2 instance for the front end.
