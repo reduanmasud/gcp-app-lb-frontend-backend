@@ -3,10 +3,10 @@
 ## 1st: Create A VPS server
 Goto **VPC Network** click **Create VPC Network**
 Setup VPC as your need. In my case these are my configurations:
-Name: `project-vpc`
-Subnet Name: `project-subnet`
-Subnet Region: `us-centeral1`
-Subnet IP range: `10.50.60.0/24`
+**Name**: `project-vpc`
+**Subnet Name**: `project-subnet`
+**Subnet Region**: `us-centeral1`
+**Subnet IP range**: `10.50.60.0/24`
 For now I'm allowing all **Firewall** rules
 ## 2nd: Create a Cloud NAT
 ## 3rd: Create an EC2 instance for the load balancer.
