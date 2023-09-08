@@ -24,6 +24,7 @@ function App() {
 
   return (
     <>
+    <h1>Hello, GCP</h1>
     <ul>
      {cities.map((city, idx)=>(
       <li>{city.name}</li>
