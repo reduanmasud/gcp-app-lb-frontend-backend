@@ -83,7 +83,7 @@ sudo nginx -s reload
 ## 4th: Create an EC2 instance for the front end.
 Configuration
 ```
-Name: loadbalancer
+Name: frontend
 Region: us-central1 (lowa) <-- because we've created our vps & subnet on us-central1
 Zone: us-central1-a
 Allow Firewall HTTP & HTTPS traffic
@@ -123,4 +123,13 @@ yarn run build
 yarn run preview --host --port 80
 ```
 ## 5th: Create an EC2 instance for Backend
-
+Configuration
+```
+Name: backend
+Region: us-central1 (lowa) <-- because we've created our vps & subnet on us-central1
+Zone: us-central1-a
+Allow Firewall HTTP & HTTPS traffic
+Then go to the Advanced option & set our subnet "project-subnet"
+External IPv4 address: None
+```
+Now do the following Install node js like we installed before. then clone the git repo. then goto backend and run on port 80.
