@@ -3,7 +3,7 @@ import {useEffect, useState } from 'react'
 
 import './App.css'
 
-const host = "http://localhost";
+const host = "http://18.212.179.164/";
 const port = "3000";
 function App() {
 
